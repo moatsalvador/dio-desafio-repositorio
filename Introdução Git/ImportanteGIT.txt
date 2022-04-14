@@ -1,0 +1,122 @@
+
+- para adicionar um arquivo no git
+git add nomedoarquivo
+git add .gitignore
+
+-para adicionar todos os arquivos ao commit usa-se o comando abaixo:
+git add . 
+
+sendo que o . informa que é todos os arquivos pendentes.
+
+--para commitar usa-se o comando abaixo
+git commit -m "Descrição do commit" 
+
+
+--para voltar o status do projeto do ultimo commit
+git clean -df
+git checkout -- .
+
+--desfazer o ultimo commit ;
+- Remover o ultimo commit mantendo as alterações feitas nos arquivos:
+git reset --soft HEAD~1
+
+- Remover o último commit e suas alterações nos arquivos (PERIGOSO)
+git reset --soft HEAD~1
+
+--para ver os commits resumidos 
+git log --oneline
+
+--ver a lista de commits, quais os ultimos
+git log -3 //irá ver os 3 ultimos logs
+
+--voltar o projeto em um determinado commit
+ git checkout CODIGODOCOMIT
+ codigo do commit pode pegar com o comando git log --oneline
+ 
+--retonar para o ultimo commit
+ git checkout NOMEDOBRANCH
+ 
+--Associando um repositorio local a um repositorio no github.
+Apos criar o repositorio no git pode-se pegar o comandos para vinculação 
+git remote add origin https://github.com/moatsalvador/testeRepositorioGIT.git
+
+--para alterar a url do repositorio local fazer o comando
+git remote set-ur origin novaURL
+
+--TRANSFERINDO O REPOSITORIO LOCAL PARA O GIT
+--git push -u origin master 
+
+--PARA COPIAR UM REPOSITORIO DO GIT PARA A MAQUINA usar o comando:
+git clone URL_DO_REPOSITORIO
+
+--PARA ATUALIZAR O REPOSITORIO local com as atualizações do repositorio no GIT executar os comandos de:
+git pull origin master  
+
+--renomeando arquivo através do git - assim ele já faz a alteração sem precisar adicionar e após commita-lo
+git mv nomearquivo.extencao novonomedoarquivo.extencao
+
+--para remover um arquivo 
+git rm nomearquivo.extencao
+
+--após adicionar alteração antes de coomitar verificar as alterações 
+git diff --staged
+
+--para sair da visualização acima deve digitar q
+
+--para verificar as diferenças entre os commits 
+git diff INDEXCOMMITMAISVELHO..INDEXCOMMITMAISNOVO
+git diff b6bb207..cff3eca
+
+--como desfazer algo
+--Alteracao da descrição do ultimo commit 
+git commit --amend -m "TEXTO A SER INFORMADO NO COMMIT"
+
+--o comando acima pode ser usado para alterações no ultimo commit como alteração de informações de arquivo, ou inclusão de novo arquivo.
+
+
+--Como retonar um arquivo para um stagio anterior
+ git restore --staged nomearquivo.extencao
+ git restore --staged paginaContato.html
+
+ --como retornar um arquivo ainda não commitado para a versão do ultimo commit 
+ git checkout nomearquivo.extencao
+ git checkout programa.html
+
+--quando quer retornar os arquivos que foram alterados do projeto para o ultimo commit realizado, exemplo fiz muitas alterações
+gerei erros e quere recomeçar, nessa opção arquivos novos que não estavam adicionados ainda não será alterado.
+git reset HEAD --hard
+
+--Descartar o ultimo commit 
+git reset HEAD^ --hard
+
+--TRABALHANDO COM BRANCH
+--criação de branch
+git branch nomedabranch
+
+--mudando de branch
+git checkout nomedabranch
+
+--para excluir uma branch
+git branch -d nomedabranch
+
+--para excluir realmente o branch sem verificacao
+git branch -D nomedabranch
+
+--para realizar o merge, estando na branch que deseja receber o merge
+git merge nomedabranch
+
+--Para criar uma nova branch e já acessa-la
+ git checkout -b nomedabranch
+
+--rebase - conectado a branch em que seja criar uma base, semelhante ao merge
+git rebase nomedabranch
+
+
+--criação de tags - permite que seja definido um marco de versão e não permite novos commits nessa tag,
+sendo um pouco diferente do branch que ali permite novos commits, garantindo de como estava o código naquela versão.
+git tag nomedatag
+git tag v1.0
+
+--criando uma branch a partir de uma tag
+git switch -c nomedabranch 
+git switch -c correcoes-v1.0
