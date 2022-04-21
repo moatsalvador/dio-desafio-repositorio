@@ -1,0 +1,30 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+}
+
+.navbar {
+    background-color: rgba(0, 204, 255, 0.712);
+}
+
+.quem-somos{
+    background-color: rgb(100, 216, 237);
+}
+
+.margin {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+
+.parceiros{
+    background-color: rgb(100, 210, 237);
+}
+
+.servicos{
+    background-color: rgb(100, 182, 237);
+}
+
+.bg-footer {
+    background-color: darkcyan;
+}
